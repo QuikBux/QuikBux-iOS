@@ -72,53 +72,53 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     func setupUI() {
         
         // Signup button UI setup
-        signupButton.backgroundColor = UIColor.clearColor()
+        signupButton.backgroundColor = UIColor.whiteColor()
         signupButton.layer.cornerRadius = 5
         signupButton.layer.borderWidth = 1
-        signupButton.layer.borderColor = UIColor.whiteColor().CGColor
+        signupButton.layer.borderColor = UIColor.blackColor().CGColor
         
         // Name text field UI setup
         nameTextField.backgroundColor = UIColor.clearColor()
         nameTextField.text = ""
         nameTextField.attributedPlaceholder = NSAttributedString(string:"Name",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         let bottomBorder1 = CALayer()
         bottomBorder1.frame = CGRectMake(0.0, nameTextField.frame.size.height - 1, nameTextField.frame.size.width, 1.0);
-        bottomBorder1.backgroundColor = UIColor.whiteColor().CGColor
+        bottomBorder1.backgroundColor = UIColor.blackColor().CGColor
         nameTextField.layer.addSublayer(bottomBorder1)
         
         // Email text field UI setup
         emailTextField.backgroundColor = UIColor.clearColor()
         emailTextField.text = ""
         emailTextField.attributedPlaceholder = NSAttributedString(string:"Email",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         let bottomBorder2 = CALayer()
         bottomBorder2.frame = CGRectMake(0.0, emailTextField.frame.size.height - 1, emailTextField.frame.size.width, 1.0);
-        bottomBorder2.backgroundColor = UIColor.whiteColor().CGColor
+        bottomBorder2.backgroundColor = UIColor.blackColor().CGColor
         emailTextField.layer.addSublayer(bottomBorder2)
         
         // Password text field UI setup
         passwordTextField.backgroundColor = UIColor.clearColor()
         passwordTextField.text = ""
         passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         let bottomBorder3 = CALayer()
         bottomBorder3.frame = CGRectMake(0.0, passwordTextField.frame.size.height - 1, passwordTextField.frame.size.width, 1.0);
-        bottomBorder3.backgroundColor = UIColor.whiteColor().CGColor
+        bottomBorder3.backgroundColor = UIColor.blackColor().CGColor
         passwordTextField.layer.addSublayer(bottomBorder3)
         
         // City text field UI setup
         cityTextField.backgroundColor = UIColor.clearColor()
         cityTextField.text = ""
         cityTextField.attributedPlaceholder = NSAttributedString(string:"City",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         let bottomBorder4 = CALayer()
         bottomBorder4.frame = CGRectMake(0.0, cityTextField.frame.size.height - 1, cityTextField.frame.size.width, 1.0);
-        bottomBorder4.backgroundColor = UIColor.whiteColor().CGColor
+        bottomBorder4.backgroundColor = UIColor.blackColor().CGColor
         cityTextField.layer.addSublayer(bottomBorder4)
     }
     

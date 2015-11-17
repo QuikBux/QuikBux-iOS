@@ -19,7 +19,12 @@ class WorkerTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        bgView.backgroundColor = UIColor.clearColor()
+        workerNameLabel.textColor = UIColor.blackColor()
+        occupationsLabel.textColor = UIColor.blackColor()
+        descriptionTextView.textColor = UIColor.blackColor()
+        descriptionTextView.backgroundColor = UIColor.whiteColor()
+        
+        bgView.layer.backgroundColor = UIColor.whiteColor().CGColor
         bgView.layer.borderColor = UIColor.whiteColor().CGColor
         bgView.layer.borderWidth = 2
         bgView.layer.cornerRadius = 5

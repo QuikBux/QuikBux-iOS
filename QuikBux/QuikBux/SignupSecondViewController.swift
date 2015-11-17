@@ -97,15 +97,15 @@ class SignupSecondViewController: UIViewController, UITextViewDelegate {
     func setupUI() {
         // Text view UI
         descriptionTextView.backgroundColor = UIColor.clearColor()
-        descriptionTextView.layer.borderColor = UIColor.whiteColor().CGColor
+        descriptionTextView.layer.borderColor = UIColor.blackColor().CGColor
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.cornerRadius = 5
         
         // Signup button UI
-        signupButton.backgroundColor = UIColor.clearColor()
+        signupButton.backgroundColor = UIColor.whiteColor()
         signupButton.layer.cornerRadius = 5
         signupButton.layer.borderWidth = 1
-        signupButton.layer.borderColor = UIColor.whiteColor().CGColor
+        signupButton.layer.borderColor = UIColor.blackColor().CGColor
     }
     
     // MARK: UITextViewDelegate

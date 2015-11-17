@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         setupUI()
         
         FBController.filterUsers { (arr) -> Void in
-            print(arr)
+            //print(arr)
         }
         
         //FBController.uploadPost("Need someone to move my furniture", title: "Mover", name: "Jack")
@@ -77,13 +77,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                     if result.valueForKeyPath("type") as! String == "worker"
                     {
                         print("IMPORTANT")
-                        print(result.valueForKeyPath("type") as! String)
                         print("The result is worker so i need to look at posts")
                         self.performSegueWithIdentifier("loginToPostSegue", sender: self)
                     } else {
                         print("The result is client so i need to look at workers")
                         print("IMPORTANT")
-                        print(result)
                         self.performSegueWithIdentifier("loginToWorkerSegue", sender: self)
                     }
                 })
@@ -109,38 +107,39 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     // UI Setup
     func setupUI() {
         // Email text field UI setup
+        emailTextField.layer.borderColor = UIColor.clearColor().CGColor
         emailTextField.backgroundColor = UIColor.clearColor()
         emailTextField.text = ""
         emailTextField.attributedPlaceholder = NSAttributedString(string:"Email",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         let bottomBorder1 = CALayer()
-        bottomBorder1.frame = CGRectMake(0.0, emailTextField.frame.size.height - 1, emailTextField.frame.size.width, 1.0);
-        bottomBorder1.backgroundColor = UIColor.whiteColor().CGColor
+        bottomBorder1.frame = CGRectMake(0.0, emailTextField.frame.size.height - 1, emailTextField.frame.size.width, 1.0)
+        bottomBorder1.backgroundColor = UIColor.blackColor().CGColor
         emailTextField.layer.addSublayer(bottomBorder1)
         
         // Password text field UI setup
         passwordTextField.backgroundColor = UIColor.clearColor()
         passwordTextField.text = ""
         passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         let bottomBorder2 = CALayer()
-        bottomBorder2.frame = CGRectMake(0.0, passwordTextField.frame.size.height - 1, passwordTextField.frame.size.width, 1.0);
-        bottomBorder2.backgroundColor = UIColor.whiteColor().CGColor
+        bottomBorder2.frame = CGRectMake(0.0, passwordTextField.frame.size.height - 1, passwordTextField.frame.size.width, 1.0)
+        bottomBorder2.backgroundColor = UIColor.blackColor().CGColor
         passwordTextField.layer.addSublayer(bottomBorder2)
         
         // Signup button UI setup
-        signupButton.backgroundColor = UIColor.clearColor()
+        signupButton.backgroundColor = UIColor.whiteColor()
         signupButton.layer.cornerRadius = 5
         signupButton.layer.borderWidth = 1
-        signupButton.layer.borderColor = UIColor.whiteColor().CGColor
+        signupButton.layer.borderColor = UIColor.blackColor().CGColor
         
         // Login button UI setup
-        loginButton.backgroundColor = UIColor.clearColor()
+        loginButton.backgroundColor = UIColor.whiteColor()
         loginButton.layer.cornerRadius = 5
         loginButton.layer.borderWidth = 1
-        loginButton.layer.borderColor = UIColor.whiteColor().CGColor
+        loginButton.layer.borderColor = UIColor.blackColor().CGColor
     }
     
     // MARK: UITextFieldDelegate

@@ -21,8 +21,17 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("I AM IN THE POST HTININGIGN!!!")
         // Do any additional setup after loading the view        
         
+//        myRootRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+//            //print(snapshot.value.objectForKey("author"))
+//            print(snapshot)
+//            if snapshot != nil {
+//            self.posts.append(snapshot.value)
+//            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.tableView.numberOfRowsInSection(0) + 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Left)
+//            }
+//        })
+//
         FBController.getPosts { (result) -> Void in
-            print("This is the result \(result)")
+            //print("This is the result \(result)")
             self.posts = result
             self.tableView.reloadData()
         }
@@ -40,6 +49,9 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.performSegueWithIdentifier("postToHomeSegue", sender: self)
     }
     
+    @IBAction func profileButtonPressed(sender: UIButton) {
+        self.performSegueWithIdentifier("postToProfileSegue", sender: self)
+    }
     
     
     
@@ -71,9 +83,8 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let results = posts {
             let post = results.allValues[indexPath.row] as! NSDictionary
-            //let post = postArray.allValues as! NSDictionary
-            //print(results)
-            cell.titleLabel.text = post.valueForKey("title") as? String
+//            let post = results[indexPath.row]
+            cell.titleLabel.text = post.valueForKey("jobType") as? String
             cell.descriptionLabel.text = post.valueForKey("description") as? String
             cell.posterNameLabel.text = post.valueForKey("name") as? String
         }

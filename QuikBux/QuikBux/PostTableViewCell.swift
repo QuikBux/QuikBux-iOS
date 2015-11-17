@@ -20,7 +20,11 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        bgView.backgroundColor = UIColor.clearColor()
+        titleLabel.textColor = UIColor.blackColor()
+        descriptionLabel.textColor = UIColor.blackColor()
+        posterNameLabel.textColor = UIColor.blackColor()
+        
+        bgView.backgroundColor = UIColor.whiteColor()
         bgView.layer.borderColor = UIColor.whiteColor().CGColor
         bgView.layer.borderWidth = 2
         bgView.layer.cornerRadius = 5

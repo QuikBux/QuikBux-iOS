@@ -19,9 +19,16 @@ class WorkerViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.allowsSelection = false
 
         print("I AM IN working thing!!!!")
+
+//        let usersRef = myRootRef.childByAppendingPath("users")
+//        usersRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+//            //print(snapshot.value.objectForKey("author"))
+//            self.workers.append(snapshot.value)
+//            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.tableView.numberOfRowsInSection(0) + 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Left)
+//        })
         
         FBController.filterUsers { (arr) -> Void in
-            print("This is the result \(arr)")
+            //print("This is the result \(arr)")
             self.workers = arr
             self.tableView.reloadData()
         }
@@ -66,15 +73,10 @@ class WorkerViewController: UIViewController, UITableViewDataSource, UITableView
         //cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         if let results = workers {
-            print(results)
             let post = results[indexPath.row]
-            print("THE POST IS ABOUT TO BE")
-            print(post)
-            //let post = postArray.allValues as! NSDictionary
-            //print(results)
             cell.workerNameLabel.text = post.valueForKey("name") as? String
-            cell.descriptionTextView.text = post.valueForKey("description") as? String
-            cell.occupationsLabel.text = post.valueForKey("status") as? String
+            cell.descriptionTextView.text = post.valueForKey("skills") as? String
+            cell.occupationsLabel.text = post.valueForKey("description") as? String
         }
         
         
